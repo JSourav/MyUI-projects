@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/90fe92f964.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="anime.css">
+  <link rel="icon" type="image/x-icon" href="image/SouravNameLogo.png">
+  <title>Document</title>
+</head>
+<script>
+  function myFunction() {
+    var x = document.getElementById("mySelect");
+    var option = document.createElement("option");
+    option.text = "Sorry to say ! it is not working properly?";
+    x.add(option);
+  }
+</script>
+
+<body>
+  <div class="header">
+    <h1 style="text-align: center; color: aliceblue;">&#x2728;Animation Characters &#x2728;</h1>
+    <div id="searchWrapper">
+      <select name="type" id="topSearchValue" class="inputtext" v-model="type" style="display: flex;">
+        <option value="all">Catagories</option>
+        <option value="anime">Anime</option>
+        <option value="manga">Blast</option>
+        <option value="character">Command</option>
+      </select>
+      <input type="text" name="search" id="searchbar" onkeyup="search_character()"
+        placeholder="search for a character" />
+      <button id="search" onclick="sortImage()" type="button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('h')"> #h</button>
+    <button class="btn" onclick="filterSelection('k')"> #k</button>
+    <button class="btn" onclick="filterSelection('new')"> #new</button>
+    <!-- CARTCONTAINER CUSTOM SEARCH -->
+    <form>
+      <option style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: black;">WATCHLIST</option>
+      <select id="mySelect" size="8">
+      </select>
+    </form>
+    <!-- CARTCONTAINER -->
+  </div>
+  <!--Gallery Grid -->
+  <div class="list">
+    <div id="item1" class="column h">
+      <div class="content">
+        <a href=""><img src="image/1.Hangyaku no Lelouch.jpg" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Hangyaku</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>9 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item2" class="column c">
+      <div class="content">
+        <a href=""><img src="image/2.Cowboy Bebop.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Cowboy Bebop</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>8.9 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item3" class="column k">
+      <div class="content">
+        <a href=""><img src="image/3.K-On!.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>K-On!</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7.1 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+      <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="arrow up"></i></button>
+    </div>
+
+    <div id="item4" class="column m">
+      <div class="content">
+        <a href=""><img src="image/4.Mai-Otome.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Mai-Otome</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>8.1 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item5" class="column cars">
+      <div class="content">
+        <a href=""><img src="image/5.Byousoku 5 Centimeter.webp" alt="Denim Jeans" style="width:200px"
+            height="260px"></a>
+        <h3>Byousoku 5</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>6.9 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item6" class="column h">
+      <div class="content">
+        <a href=""><img src="image/6.Nichijou.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Hichijou</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7.7 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+
+    <div id="item7" class="column k">
+      <div class="content ">
+        <a href=""><img src="image/7.Akira.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>kira</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>8.8 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item8" class="column h">
+      <div class="content">
+        <a href=""><img src="image/8.Toki wo Kakeru Shoujo.webp" alt="Denim Jeans" style="width:200px"
+            height="260px"></a>
+        <h3>Hoki wo Kakeru</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>6.8 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item9" class="column c">
+      <div class="content">
+        <a href=""><img src="image/9.Koukyoushihen Eureka Seven.webp" alt="Denim Jeans" style="width:200px"
+            height="260px"></a>
+        <h3>Cureka</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>8.5 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item10" class="column m">
+      <div class="content">
+        <a href=""><img src="image/10.Suzumiya Haruhi no Yuuutsu.webp" alt="Denim Jeans" style="width:200px"
+            height="260px"></a>
+        <h3>muzumiya Haruhi</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7.6 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item11" class="column new">
+      <div class="content">
+        <a href=""><img src="image/11.True Tears.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>True Tears</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>8.2 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item12" class="column new">
+      <div class="content">
+        <a href=""><img src="image/12.Onegai☆Teacher.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Onegai☆Teacher</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>9.3 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item13" class="column new">
+      <div class="content">
+        <a href=""><img src="image/13.Live House!.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Live House!</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7.4 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item14" class="column k">
+      <div class="content">
+        <a href=""><img src="image/14.Kurokami The Animation.webp" alt="Denim Jeans" style="width:200px"
+            height="260px"></a>
+        <h3>Kurokami</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>9.8 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+
+    <div id="item15" class="column m">
+      <div class="content">
+        <a href=""><img src="image/15.Mobile Suit Gundam SEED Destiny.webp" alt="Denim Jeans" style="width:200px"
+            height="260px"></a>
+        <h3>mundam SEED</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>>6 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item16" class="column new">
+      <div class="content">
+        <a href=""><img src="image/16.Witch Hunter Robin.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Robin</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7 / 10</p>
+        <p> a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J) </p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item17" class="column new">
+      <div class="content">
+        <a href=""><img src="image/17.s.CRY.ed.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>s.CRY.ed</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>5 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item18" class="column new">
+      <div class="content">
+        <a href=""><img src="image/18.Onegai☆Twins.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Onegai☆Twins</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>3 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item19" class="column new">
+      <div class="content">
+        <a href=""><img src="image/19.Love Hina Again.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>Love Hina Again</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>0 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item20" class="column h">
+      <div class="content">
+        <a href=""><img src="image/20.hackRoots.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>HackRoots</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+    <div id="item21" class="column people">
+      <div class="content h">
+        <a href=""><img src="image/20.hackRoots.webp" alt="Denim Jeans" style="width:200px" height="260px"></a>
+        <h3>HackRoots</h3>
+        <p class="rating"><i class="fa-solid fa-star"></i>7 / 10</p>
+        <p>a 15-year-old craft user, arrives from Italy to Japan to work for an organization named STN Japan
+          Division (STN-J)</p>
+        <button type="button" onclick="myFunction()">Add to watchlist</button>
+      </div>
+    </div>
+  </div>
+  <!-- END GRID -->
+  <!-- CARTCONTAINER 2 FOR API FETCHING -->
+
+  <div class="container">
+    <h1>&#x2728;Fetching Characters Using API&#x2728;</h1>
+    <div id="searchWrapper">
+      <input type="text" name="searchBar" id="searchBar" placeholder="search for a character" />
+    </div>
+    <ul id="charactersList"></ul>
+  </div>
+  <!-- CARTCONTAINER 2 FOR API FETCHING -->
+
+
+
+  <!-- <footer>
+    <a href="https://www.facebook.com/sourav.jamoriya/"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://twitter.com/sourav_jamoriya"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/sourav-jamoriya"><i class="fa fa-linkedin"></i></a>
+    <p class="">&copy; SouravJamoriya.in.2022 All rights reserved.</p>
+  </footer> -->
+
+
+  <script type="text/javascript" src="anime.js"></script>
+
+</body>
+
+</html>
